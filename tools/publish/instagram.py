@@ -1,4 +1,4 @@
-"""Instagram publishing (Reels) with "Instagram API with Instagram Login".
+"""Instagram video publishing with "Instagram API with Instagram Login".
 
     python tools/publish/instagram.py --set-token TOKEN    (once: long-lived token from the Meta app)
     python tools/publish/instagram.py --whoami
@@ -103,7 +103,7 @@ def publish(video: Path, meta: dict, *, private: bool = False, dry_run: bool = F
     if private:
         raise PublishError("Instagram has no private publishing: skipped in test mode.")
     pm = platform_meta(meta, P)
-    params = {"media_type": "REELS", "upload_type": "resumable",
+    params = {"media_type": "REELS", "upload_type": "resumable",  # API value required for video posts
               "caption": caption_for(meta, P),
               "share_to_feed": "true" if pm.get("share_to_feed", True) else "false"}
     cover = resolve_cover(video, meta, P)
@@ -155,7 +155,7 @@ def publish(video: Path, meta: dict, *, private: bool = False, dry_run: bool = F
 
 # --------------------------------------------------------------------------- CLI
 def main() -> None:
-    ap = argparse.ArgumentParser(description="Instagram Reels publishing")
+    ap = argparse.ArgumentParser(description="Instagram publishing")
     ap.add_argument("video", nargs="?", type=Path)
     ap.add_argument("--meta", type=Path)
     ap.add_argument("--set-token", metavar="TOKEN")

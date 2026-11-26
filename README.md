@@ -8,7 +8,7 @@ It works with any kind of video: any source (camera, screen recording, phone, ex
 any format (vertical or horizontal) and any length accepted by the platforms. Each video has its own
 editing script, so the pipeline is not tied to a type of content.
 
-Publishing to **Instagram** (Reels) is also implemented (`tools/publish/instagram.py`). It is not
+Publishing to **Instagram** is also implemented (`tools/publish/instagram.py`). It is not
 enabled by default and is currently untested: the account used to test it was suspended by Meta.
 
 ## Architecture

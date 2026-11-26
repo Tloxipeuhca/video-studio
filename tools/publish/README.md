@@ -1,6 +1,6 @@
 # tools/publish
 
-Publishing to YouTube and TikTok. An Instagram (Reels) module is also implemented but untested: the
+Publishing to YouTube and TikTok. An Instagram module is also implemented but untested: the
 account used to test it was suspended by Meta; it is not in the default platforms. These commands
 run **on the publishing server**, in `VS_SERVER_DIR`, where the secrets are: see
 [docs/server.md](../../docs/server.md) and [docs/configuration.md](../../docs/configuration.md).
@@ -29,6 +29,6 @@ Re-authorization from the PC (the server has no display): `tools\deploy\auth_tun
 | `selftest.py` | Self-test: tools, configuration, vault, secrets present, tokens (`--online`) |
 | `youtube.py` | YouTube Data API v3 (desktop-app OAuth) |
 | `tiktok.py` | TikTok Content Posting API (direct or inbox) |
-| `instagram.py` | Instagram API (Reels) — implemented, untested, opt-in with `--platforms` |
+| `instagram.py` | Instagram API — implemented, untested, opt-in with `--platforms` |
 
 Statistics and replies to comments: [tools/stats](../stats) and [docs/statistics.md](../../docs/statistics.md).
