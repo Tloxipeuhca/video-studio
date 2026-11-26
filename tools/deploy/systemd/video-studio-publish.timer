@@ -1,0 +1,10 @@
+[Unit]
+Description=video-studio: check every 15 min for videos to publish
+
+[Timer]
+OnCalendar=*:0/15
+Persistent=true
+RandomizedDelaySec=60
+
+[Install]
+WantedBy=timers.target

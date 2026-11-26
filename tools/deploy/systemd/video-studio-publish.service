@@ -1,0 +1,13 @@
+[Unit]
+Description=video-studio: publish scheduled videos (schedule reached)
+After=network-online.target
+
+[Service]
+Type=oneshot
+# @VS_SERVER_DIR@ is replaced at install time by deploy_linux.ps1 -InstallTimer (value from .env)
+WorkingDirectory=@VS_SERVER_DIR@
+ExecStart=@VS_SERVER_DIR@/.venv/bin/python tools/publish/run.py --scan videos --due
+# The gopass/age vault must be readable from this context (no terminal):
+# check with "systemd-run --user --wait -P .venv/bin/python tools/publish/selftest.py".
+TimeoutStartSec=45min
+Nice=5

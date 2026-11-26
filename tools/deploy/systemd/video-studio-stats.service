@@ -1,0 +1,11 @@
+[Unit]
+Description=video-studio: collect YouTube and TikTok statistics, build stats/index.html
+After=network-online.target
+
+[Service]
+Type=oneshot
+# @VS_SERVER_DIR@ is replaced at install time by deploy_linux.ps1 -InstallTimer (value from .env)
+WorkingDirectory=@VS_SERVER_DIR@
+ExecStart=@VS_SERVER_DIR@/.venv/bin/python tools/stats/collect.py
+TimeoutStartSec=15min
+Nice=10

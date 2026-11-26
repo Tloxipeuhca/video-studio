@@ -1,0 +1,10 @@
+[Unit]
+Description=video-studio: statistics every 6 hours
+
+[Timer]
+OnCalendar=00/6:20
+Persistent=true
+RandomizedDelaySec=300
+
+[Install]
+WantedBy=timers.target

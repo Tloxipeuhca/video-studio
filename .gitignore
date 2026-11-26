@@ -1,0 +1,32 @@
+# Secrets: OAuth credentials and tokens, never versioned
+/secrets/
+*.token.json
+client_secret*.json
+
+# Machine configuration (template: .env.example)
+/.env
+/local.json
+
+# Private material (brand assets, legal pages)
+/private/
+
+# Python environment
+.venv/
+__pycache__/
+.pytest_cache/
+
+# Video projects are personal content: never versioned
+/videos/
+*.mp4
+*.webm
+*.mkv
+*.cover.jpg
+
+# Generated on the machines
+/stats/
+tools/bench/results/
+.publish.lock
+
+# Misc
+/_to_delete/
+thumbs/
